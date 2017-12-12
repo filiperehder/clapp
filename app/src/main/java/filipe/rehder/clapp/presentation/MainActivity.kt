@@ -1,10 +1,12 @@
 package filipe.rehder.clapp.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.clapp.R
 import filipe.rehder.clapp.domain.MainContract
+import filipe.rehder.detail.presentation.DetailActivity
 import javax.inject.Inject
 
 /**
@@ -19,9 +21,15 @@ class MainActivity : DaggerAppCompatActivity(), MainContract.IView {
         setContentView(R.layout.main_activity)
 
         mainPresenter.loadMain()
+
+        startDetailActivity()
     }
 
     override fun onMainLoaded() {
         Log.i("onMainLoaded", "Hello World")
+    }
+
+    fun startDetailActivity() {
+        startActivity(Intent(this, DetailActivity::class.java))
     }
 }
