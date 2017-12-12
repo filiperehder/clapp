@@ -6,7 +6,7 @@ import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.clapp.R
 import filipe.rehder.clapp.domain.MainContract
-import filipe.rehder.detail.presentation.DetailActivity
+import filipe.rehder.list.presentation.ListActivity
 import javax.inject.Inject
 
 /**
@@ -30,6 +30,6 @@ class MainActivity : DaggerAppCompatActivity(), MainContract.IView {
     }
 
     fun startDetailActivity() {
-        startActivity(Intent(this, DetailActivity::class.java))
+        startActivity(Intent(this, ListActivity::class.java))
     }
 }
