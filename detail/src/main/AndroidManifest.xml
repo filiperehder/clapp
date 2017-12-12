@@ -3,7 +3,7 @@
     package="filipe.rehder.detail">
 
     <application>
-        <activity android:name=".DetailActivity"/>
+        <activity android:name=".presentation.DetailActivity"/>
     </application>
 
 </manifest>

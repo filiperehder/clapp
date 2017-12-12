@@ -1,7 +1,8 @@
-package filipe.rehder.detail
+package filipe.rehder.detail.presentation
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import filipe.rehder.detail.R
 
 class DetailActivity : AppCompatActivity() {
 
