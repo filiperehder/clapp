@@ -4,10 +4,10 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import filipe.rehder.clapp.presentation.MainActivity
 import filipe.rehder.clapp.presentation.di.MainModule
-import filipe.rehder.detail.di.DetailModule
-import filipe.rehder.detail.presentation.DetailActivity
-import filipe.rehder.list.di.ListModule
-import filipe.rehder.list.presentation.ListActivity
+import filipe.rehder.presentation.details.di.DetailModule
+import filipe.rehder.presentation.details.DetailActivity
+import filipe.rehder.presentation.list.di.ListModule
+import filipe.rehder.presentation.list.ListActivity
 
 
 /**

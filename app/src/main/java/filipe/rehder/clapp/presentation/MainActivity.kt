@@ -6,7 +6,7 @@ import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.clapp.R
 import filipe.rehder.clapp.domain.MainContract
-import filipe.rehder.list.presentation.ListActivity
+import filipe.rehder.presentation.list.ListActivity
 import javax.inject.Inject
 
 /**

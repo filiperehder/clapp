@@ -1,9 +1,9 @@
-package filipe.rehder.list.presentation
+package filipe.rehder.presentation.list
 
 import android.os.Bundle
+import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
-import filipe.rehder.list.R
-import kotlinx.android.synthetic.main.list_activity.*
+import filipe.rehder.detail.R
 import javax.inject.Inject
 
 /**
@@ -17,6 +17,6 @@ class ListActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_activity)
 
-        textView.text = presenter.helloWorld()
+        Log.d("Hi", presenter.helloWorld())
     }
 }

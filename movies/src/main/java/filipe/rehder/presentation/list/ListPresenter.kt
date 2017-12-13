@@ -1,6 +1,5 @@
-package filipe.rehder.list.presentation
+package filipe.rehder.presentation.list
 
-import android.util.Log
 import javax.inject.Inject
 import javax.inject.Named
 

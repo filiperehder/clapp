@@ -1,4 +1,4 @@
-package filipe.rehder.list.di
+package filipe.rehder.presentation.list.di
 
 import dagger.Module
 import dagger.Provides

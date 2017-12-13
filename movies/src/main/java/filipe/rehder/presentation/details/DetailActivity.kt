@@ -1,11 +1,9 @@
-package filipe.rehder.detail.presentation
+package filipe.rehder.presentation.details
 
 import android.os.Bundle
-import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.detail.R
 import javax.inject.Inject
-import javax.inject.Named
 
 class DetailActivity : DaggerAppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package filipe.rehder.detail.presentation
+package filipe.rehder.presentation.details
 
 import android.util.Log
 import javax.inject.Inject
