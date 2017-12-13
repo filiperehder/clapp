@@ -1,4 +1,4 @@
-package filipe.rehder.detail
+package filipe.rehder.movies
 
 import org.junit.Test
 

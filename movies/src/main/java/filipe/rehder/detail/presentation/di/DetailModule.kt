@@ -10,7 +10,4 @@ import javax.inject.Named
 @Module
 class DetailModule {
 
-    @Provides
-    @Named("stringOfTest")
-    fun provideStringOfTest() = "Hello World in DetailModule"
 }

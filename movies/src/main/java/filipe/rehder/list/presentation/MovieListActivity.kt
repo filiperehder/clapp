@@ -21,11 +21,15 @@ class MovieListActivity : DaggerAppCompatActivity(), MovieListContract.IView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_activity)
 
+        initView()
+    }
+
+    private fun initView() {
+        recyclerView.layoutManager = LinearLayoutManager(this)
         presenter.onViewReady()
     }
 
     override fun addListMovies(listMovies: MutableList <MovieItem>) {
-        recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = MovieListAdapter(listMovies)
     }
 
