@@ -12,4 +12,5 @@ class DetailPresenter @Inject constructor(@Named("stringOfTest") private var str
     fun helloWorld() {
         Log.i("Hello World", stringOfTest)
     }
+
 }
