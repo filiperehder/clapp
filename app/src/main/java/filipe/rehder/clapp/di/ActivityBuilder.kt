@@ -4,10 +4,10 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import filipe.rehder.clapp.presentation.MainActivity
 import filipe.rehder.clapp.presentation.di.MainModule
-import filipe.rehder.presentation.details.di.DetailModule
-import filipe.rehder.presentation.details.DetailActivity
-import filipe.rehder.presentation.list.di.ListModule
-import filipe.rehder.presentation.list.ListActivity
+import filipe.rehder.detail.presentation.details.di.DetailModule
+import filipe.rehder.detail.presentation.DetailActivity
+import filipe.rehder.list.presentation.MovieListActivity
+import filipe.rehder.list.presentation.di.MovieListModule
 
 
 /**
@@ -22,7 +22,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(DetailModule::class)])
     internal abstract fun bindDetailActivity(): DetailActivity
 
-    @ContributesAndroidInjector(modules = [(ListModule::class)])
-    internal abstract fun bindListActivity(): ListActivity
+    @ContributesAndroidInjector(modules = [(MovieListModule::class)])
+    internal abstract fun bindListActivity(): MovieListActivity
 
 }

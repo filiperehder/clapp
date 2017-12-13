@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':movies')
+    implementation project(':movies')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"

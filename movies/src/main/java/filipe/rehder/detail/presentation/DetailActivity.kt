@@ -1,8 +1,8 @@
-package filipe.rehder.presentation.details
+package filipe.rehder.detail.presentation
 
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
-import filipe.rehder.detail.R
+import filipe.rehder.movies.R
 import javax.inject.Inject
 
 class DetailActivity : DaggerAppCompatActivity() {

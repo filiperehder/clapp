@@ -3,7 +3,7 @@
     package="filipe.rehder.list">
 
     <application>
-        <activity android:name="filipe.rehder.presentation.list.ListActivity"/>
+        <activity android:name="filipe.rehder.list.presentation.ListActivity"/>
     </application>
 
 </manifest>
