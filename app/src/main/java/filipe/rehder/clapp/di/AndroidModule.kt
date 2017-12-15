@@ -12,6 +12,7 @@ import javax.inject.Singleton
  */
 @Module
 class AndroidModule {
+
     @Singleton
     @Provides
     @Named("IOScheduler")
