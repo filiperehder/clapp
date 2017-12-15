@@ -36,12 +36,16 @@ dependencies {
 
     // Dagger
     implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
     // RecyclerView
-    compile "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+
+    // RxAndroid & RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
 
 }
