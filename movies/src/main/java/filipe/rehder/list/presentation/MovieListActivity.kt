@@ -6,7 +6,7 @@ import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.detail.presentation.list.adapter.MovieListAdapter
 import filipe.rehder.movies.R
 import filipe.rehder.list.domain.MovieListContract
-import filipe.rehder.list.domain.model.MovieItem
+import filipe.rehder.list.domain.model.MovieItemEntity
 import kotlinx.android.synthetic.main.list_activity.*
 import javax.inject.Inject
 
@@ -24,13 +24,18 @@ class MovieListActivity : DaggerAppCompatActivity(), MovieListContract.IView {
         initView()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onViewGone()
+    }
+
     private fun initView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         presenter.onViewReady()
     }
 
-    override fun addListMovies(listMovies: MutableList <MovieItem>) {
-        recyclerView.adapter = MovieListAdapter(listMovies)
+    override fun addListMovies(listMovieEntities: MutableList <MovieItemEntity>) {
+        recyclerView.adapter = MovieListAdapter(listMovieEntities)
     }
 
     override fun showSucess() {

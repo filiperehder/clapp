@@ -27,20 +27,20 @@ class ApiModule {
         return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl("")
+                .baseUrl("https://api.themoviedb.org/3/")
                 .client(okHttpClient)
                 .build()
     }
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(cache: Cache): OkHttpClient {
+    fun provideOkHttpClient(): OkHttpClient {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         val level = getInterceptorLevel()
         httpLoggingInterceptor.level = level
 
         return OkHttpClient.Builder()
-                .cache(cache)
+                //.cache(cache)
                 .addInterceptor(httpLoggingInterceptor)
                 .build()
     }
@@ -52,12 +52,12 @@ class ApiModule {
             HttpLoggingInterceptor.Level.NONE
     }
 
-    @Provides
-    @Singleton
-    fun provideOkHttpCache(context: Context): Cache {
-        val cacheSize = 10 * 1024 * 1024 // 10 MB
-        return Cache(context.cacheDir, cacheSize.toLong())
-    }
+//    @Provides
+//    @Singleton
+//    fun provideOkHttpCache(context: Context): Cache {
+//        val cacheSize = 10 * 1024 * 1024 // 10 MB
+//        return Cache(context.cacheDir, cacheSize.toLong())
+//    }
 
     @Provides
     @Singleton

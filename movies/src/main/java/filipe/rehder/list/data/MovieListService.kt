@@ -4,6 +4,7 @@ import filipe.rehder.list.data.model.DiscoverMovieRequest
 import filipe.rehder.list.data.model.DiscoverMovieResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  * Created by Filipe on 15/12/2017.
@@ -11,5 +12,7 @@ import retrofit2.http.GET
 interface MovieListService {
 
     @GET("discover/movie")
-    fun discoverMovie(discoverMovieRequest: DiscoverMovieRequest) : Observable<DiscoverMovieResponse>
+    fun discoverMovie(
+            @Query("api_key") apiKey: String
+    ) : Observable<DiscoverMovieResponse>
 }
