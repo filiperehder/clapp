@@ -1,28 +1,27 @@
 package filipe.rehder.list.domain.mapper
 
+import filipe.rehder.list.data.model.DiscoverMovieRequest
 import filipe.rehder.list.data.model.DiscoverMovieResponse
 import filipe.rehder.list.data.model.MovieItemResponse
 import filipe.rehder.list.domain.model.MovieItemEntity
-import filipe.rehder.list.domain.model.MovieListEntity
+import filipe.rehder.list.domain.model.MovieItemRequest
 
 /**
  * Created by Filipe on 15/12/2017.
  */
-open class MovieItemMapper : Mapper<MovieItemEntity, MovieItemResponse> {
+fun MovieItemResponse.toMovieItemEntity() = MovieItemEntity(id, title, vote_average, genre_ids,
+        overview, release_date, backdrop_path, poster_path)
 
-    override fun mapFromEntity(item: MovieItemEntity): MovieItemResponse =
-            MovieItemResponse(item.id, item.votes, item.title, item.genres, item.imageBackdrop,
-                    item.overview, item.releaseDate, item.imagePoster)
+fun MovieItemEntity.toMovieItemResponse() = MovieItemResponse(id, votes, title, genres, imageBackdrop,
+        overview, releaseDate, imagePoster)
 
-    override fun mapToEntity(response: MovieItemResponse): MovieItemEntity =
-            MovieItemEntity(response.id, response.title, response.vote_average, response.genre_ids,
-                    response.overview, response.release_date, response.backdrop_path, response.poster_path)
+fun DiscoverMovieResponse.toMovieListEntity() : List<MovieItemEntity> =
+    results.map {
+        it.toMovieItemEntity()
+    }
 
-    fun MovieItemResponse.toMovieItemEntity() = MovieItemEntity(id, title, vote_average, genre_ids,
-            overview, release_date, backdrop_path, poster_path)
+fun DiscoverMovieRequest.toMovieItemRequest() : MovieItemRequest = MovieItemRequest(language, sort_by, include_adult, page, year)
 
-    fun MovieItemEntity.toMovieItemResponse() = MovieItemResponse(id, votes, title, genres, imageBackdrop,
-            overview, releaseDate, imagePoster)
+fun MovieItemRequest.toDiscoverMovieRequest() : DiscoverMovieRequest = DiscoverMovieRequest(language, sort_by, include_adult, page, year)
 
 
-}

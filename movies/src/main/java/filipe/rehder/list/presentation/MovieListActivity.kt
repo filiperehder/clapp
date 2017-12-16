@@ -2,6 +2,7 @@ package filipe.rehder.list.presentation
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import dagger.android.support.DaggerAppCompatActivity
 import filipe.rehder.detail.presentation.list.adapter.MovieListAdapter
 import filipe.rehder.movies.R
@@ -34,7 +35,7 @@ class MovieListActivity : DaggerAppCompatActivity(), MovieListContract.IView {
         presenter.onViewReady()
     }
 
-    override fun addListMovies(listMovieEntities: MutableList <MovieItemEntity>) {
+    override fun addListMovies(listMovieEntities: List <MovieItemEntity>) {
         recyclerView.adapter = MovieListAdapter(listMovieEntities)
     }
 
@@ -43,6 +44,6 @@ class MovieListActivity : DaggerAppCompatActivity(), MovieListContract.IView {
     }
 
     override fun showError() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.i("Error", "Cant load list of Movies")
     }
 }

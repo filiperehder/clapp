@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.list_item.view.*
 /**
  * Created by Filipe on 12/12/2017.
  */
-class MovieListAdapter(private val movieListEntity: MutableList<MovieItemEntity>) : RecyclerView.Adapter<MovieListAdapter.ListViewHolder>() {
+class MovieListAdapter(private val movieListEntity: List<MovieItemEntity>) : RecyclerView.Adapter<MovieListAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         return ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))

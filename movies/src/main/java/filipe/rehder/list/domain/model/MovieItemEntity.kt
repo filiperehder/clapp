@@ -3,7 +3,7 @@ package filipe.rehder.list.domain.model
 /**
  * Created by Filipe on 12/12/2017.
  */
-data class MovieItemEntity(
+data class MovieItemEntity (
         val id: Int,
         val title: String,
         val votes: Double,
@@ -14,6 +14,10 @@ data class MovieItemEntity(
         val imagePoster : String?
 )
 
-data class MovieListEntity (
-        val results: List<MovieItemEntity>
+data class MovieItemRequest (
+    val language : String,
+    val sort_by : String,
+    val include_adult : Boolean,
+    val page : Int,
+    val year : String
 )

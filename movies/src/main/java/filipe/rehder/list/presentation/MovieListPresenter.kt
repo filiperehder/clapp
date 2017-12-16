@@ -2,6 +2,7 @@ package filipe.rehder.list.presentation
 
 import android.util.Log
 import filipe.rehder.list.domain.MovieListContract
+import filipe.rehder.list.domain.model.MovieItemRequest
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.disposables.Disposable
@@ -19,20 +20,27 @@ class MovieListPresenter  @Inject constructor(val view: MovieListContract.IView,
     private lateinit var disposable : Disposable
 
     override fun onViewReady() {
-        disposable = interactor.discoverMovies()
+        disposable = interactor.discoverMovies(requestParamaters(12))
                 .subscribeOn(ioScheduler)
                 .observeOn(mainScheduler)
                 .subscribe({
-                    Log.i("Here iam", "rocks like a hurricane")
-                    Log.i("Sucess", it.toString())
+                    view.addListMovies(it)
                 }, {
-                    Log.i("Here iam", "crashing like a hurricane")
                     Log.i("Crash", it.message)
+                    view.showError()
                 })
     }
+
+    fun requestParamaters(page: Int) : MovieItemRequest =
+            MovieItemRequest(language = "pt-Br",
+                    sort_by = "popularity.desc",
+                    include_adult = false,
+                    page  = page,
+                    year = "2017")
 
     override fun onViewGone() {
         disposable.dispose()
     }
+
 
 }
