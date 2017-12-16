@@ -12,7 +12,5 @@ import retrofit2.http.Query
 interface MovieListService {
 
     @GET("discover/movie")
-    fun discoverMovie(
-            @Query("api_key") apiKey: String
-    ) : Observable<DiscoverMovieResponse>
+    fun discoverMovie(@Query("api_key") apiKey: String) : Observable<DiscoverMovieResponse>
 }

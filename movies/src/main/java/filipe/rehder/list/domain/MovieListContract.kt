@@ -1,7 +1,5 @@
 package filipe.rehder.list.domain
 
-import filipe.rehder.list.data.MovieListRepository
-import filipe.rehder.list.data.MovieListService
 import filipe.rehder.list.data.model.DiscoverMovieResponse
 import filipe.rehder.list.domain.model.MovieItemEntity
 import io.reactivex.Observable
@@ -22,7 +20,7 @@ interface MovieListContract {
     }
 
     interface IInteractor {
-        fun discoverMovies() : Observable<MovieItemEntity>
+        fun discoverMovies() : Observable<List<MovieItemEntity>>
     }
 
     interface IRepository {

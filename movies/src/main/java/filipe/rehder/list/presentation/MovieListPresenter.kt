@@ -19,15 +19,15 @@ class MovieListPresenter  @Inject constructor(val view: MovieListContract.IView,
     private lateinit var disposable : Disposable
 
     override fun onViewReady() {
-
-
         disposable = interactor.discoverMovies()
                 .subscribeOn(ioScheduler)
                 .observeOn(mainScheduler)
                 .subscribe({
                     Log.i("Here iam", "rocks like a hurricane")
+                    Log.i("Sucess", it.toString())
                 }, {
                     Log.i("Here iam", "crashing like a hurricane")
+                    Log.i("Crash", it.message)
                 })
     }
 
