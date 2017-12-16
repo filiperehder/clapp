@@ -20,7 +20,7 @@ class MovieListPresenter  @Inject constructor(val view: MovieListContract.IView,
     private lateinit var disposable : Disposable
 
     override fun onViewReady() {
-        disposable = interactor.discoverMovies(requestParamaters(12))
+        disposable = interactor.discoverMovies(requestMovieList(1))
                 .subscribeOn(ioScheduler)
                 .observeOn(mainScheduler)
                 .subscribe({
@@ -31,7 +31,7 @@ class MovieListPresenter  @Inject constructor(val view: MovieListContract.IView,
                 })
     }
 
-    fun requestParamaters(page: Int) : MovieItemRequest =
+    private fun requestMovieList(page: Int) : MovieItemRequest =
             MovieItemRequest(language = "pt-Br",
                     sort_by = "popularity.desc",
                     include_adult = false,

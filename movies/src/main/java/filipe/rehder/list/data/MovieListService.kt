@@ -13,5 +13,7 @@ interface MovieListService {
 
     @GET("discover/movie")
     fun discoverMovie(@Query("api_key") apiKey: String,
-                      @Query("page") page: Int) : Observable<DiscoverMovieResponse>
+                      @Query("page") page: Int,
+                      @Query("year") year: String,
+                      @Query("language") language: String) : Observable<DiscoverMovieResponse>
 }

@@ -12,6 +12,6 @@ import javax.inject.Inject
  */
 class MovieListRepository @Inject constructor(private val service: MovieListService) : MovieListContract.IRepository {
     override fun discoverMovies(request: DiscoverMovieRequest): Observable<DiscoverMovieResponse> {
-            return service.discoverMovie(BuildConfig.TMDB_API_KEY, request.page)
+            return service.discoverMovie(BuildConfig.TMDB_API_KEY, request.page, request.year, request.language)
         }
     }
