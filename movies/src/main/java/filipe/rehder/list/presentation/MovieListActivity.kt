@@ -36,7 +36,7 @@ class MovieListActivity : DaggerAppCompatActivity(), MovieListContract.IView {
     }
 
     override fun addListMovies(listMovieEntities: List <MovieItemEntity>) {
-        recyclerView.adapter = MovieListAdapter(listMovieEntities)
+        recyclerView.adapter = MovieListAdapter(this, listMovieEntities)
     }
 
     override fun showSucess() {
